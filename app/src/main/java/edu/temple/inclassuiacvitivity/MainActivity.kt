@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         with (spinner) {
             /* Step 2: Create adapter to display items from array in Spinner */
-            adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, numberArray)
+            //adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, numberArray)
+            adapter = TextSizeAdapter(this@MainActivity, numberArray)
+
+            spinner.setSelection(10)
 
 
             // Step 3: Change TextView's text size to the number selected in the Spinner */
@@ -35,6 +38,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+            // Build a custom adapter to change the size of each number to its font size
+            // Remove the font for selection
         }
 
     }
